@@ -1,1 +1,7 @@
-
+services:
+   appphp:
+    image: primelife
+    container_name: primelife_v1
+    #restart: always
+    ports:
+      - 80:80
