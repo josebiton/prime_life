@@ -1,0 +1,11 @@
+
+
+
+**/.idea
+
+
+
+# ignore files
+docker-compose.yml
+Dockerfile
+Jenkinsfile
