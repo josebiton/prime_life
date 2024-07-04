@@ -1,4 +1,4 @@
-pipeline {
+ipipeline {
     agent any
      tools {
         nodejs "NodeJS" // Reemplaza "nodejs" con el nombre configurado en Jenkins
@@ -22,7 +22,7 @@ pipeline {
 
         stage('Compilación de Docker') {
             steps {
-                sh 'docker build -t backshop .'
+                sh 'docker build -t primelife .'
             }
         }
 
