@@ -102,12 +102,10 @@
       <div class="navigation">
         <div class="nav-items">
           <i class="uil uil-times nav-close-btn"></i>
-          <a href="index.html"><i class="uil uil-home"></i> Inicio</a>
-          <a href="nosotros.html"><i class="uil uil-compass"></i> Nosotros</a>
-          <a href="paquetes.html"><i class="uil uil-info-circle"></i> Tecnologias</a>
-          <a href="tours.html"><i class="uil uil-document-layout-left"></i> Proyectos</a>
-          <a href="viaje_medida.html"><i class="uil uil-envelope"></i> Encurso</a>
-          <a href="admin/index.php"><i class="uil uil-envelope"></i> Inicia secion</a>
+          <a href="./index.php"><i class="uil uil-home"></i> Inicio</a>
+          <a href="https://upeuedupe-my.sharepoint.com/:b:/g/personal/borisgonzales_upeu_edu_pe/EcIN5GGtMT9FtYH3AzdOStUB-96LgVTAaB0LaMJMriLprw?e=4cZj04"><i class="uil uil-compass"></i> Subneteo</a>
+          <a href="https://upeuedupe-my.sharepoint.com/:x:/g/personal/borisgonzales_upeu_edu_pe/Eezr-oH4SNlMqpvyf4VQJhsBXzBan9DQkOmxyLIUju8AIw?rtime=YYTjfpuc3Eg"><i class="uil uil-info-circle"></i> Inventario</a>
+         
         </div>
       </div>
       <i class="uil uil-apps nav-menu-btn"></i>
