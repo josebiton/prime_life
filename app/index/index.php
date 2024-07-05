@@ -103,9 +103,11 @@
         <div class="nav-items">
           <i class="uil uil-times nav-close-btn"></i>
           <a href="./index.php"><i class="uil uil-home"></i> Inicio</a>
+          <a href="https://upeuedupe-my.sharepoint.com/:w:/g/personal/borisgonzales_upeu_edu_pe/EY21cP-dG11Fo1wTy0CcsMQBgMuaFaZqBBWvoaZDX2vhig?e=pJ4aB8"><i class="uil uil-info-circle"></i> Nosotros</a>
           <a href="https://upeuedupe-my.sharepoint.com/:b:/g/personal/borisgonzales_upeu_edu_pe/EcIN5GGtMT9FtYH3AzdOStUB-96LgVTAaB0LaMJMriLprw?e=4cZj04"><i class="uil uil-compass"></i> Subneteo</a>
           <a href="https://upeuedupe-my.sharepoint.com/:x:/g/personal/borisgonzales_upeu_edu_pe/Eezr-oH4SNlMqpvyf4VQJhsBXzBan9DQkOmxyLIUju8AIw?rtime=YYTjfpuc3Eg"><i class="uil uil-info-circle"></i> Inventario</a>
-         
+          <a href="https://upeuedupe-my.sharepoint.com/:x:/g/personal/marco_rios_upeu_edu_pe/EWOeuQQfxVpLtp4BftbLOAoBObKmAxJamK-31DK8UgMP7w?e=EpJDnl"><i class="uil uil-info-circle"></i> Usuarios</a>
+
         </div>
       </div>
       <i class="uil uil-apps nav-menu-btn"></i>
@@ -195,7 +197,7 @@
                     <div class="inner">
                       <!-- <img src="assets/images/experiencia.png" class="icon2" alt=""> -->
                       <h5>Consultorios</h5>
-                      <p>Nuestros consultorios están diseñados para proporcionar un ambiente cómodo y seguro donde nuestros pacientes puedan recibir atención médica de calidad</p>
+                      <p>Nuestros consultorios están diseñados para proporcionar un ambiente cómodo y seguro donde nuestros pacientes puedan recibir atención médica de calidad.</p>
                     <a href="https://upeuedupe-my.sharepoint.com/:x:/g/personal/borisgonzales_upeu_edu_pe/Eezr-oH4SNlMqpvyf4VQJhsBXzBan9DQkOmxyLIUju8AIw?rtime=YYTjfpuc3Eg">Conoce mas...</a>
                     </div>
                   </div>
