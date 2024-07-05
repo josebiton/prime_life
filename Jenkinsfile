@@ -1,9 +1,6 @@
 ipipeline {
     agent any
-     tools {
-        nodejs "NodeJS" // Reemplaza "nodejs" con el nombre configurado en Jenkins
-    }
-
+    
     stages {
         stage('Preparacion') {
             steps {
