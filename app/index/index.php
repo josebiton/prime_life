@@ -9,14 +9,14 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 
 
-    <title>Modu-Emergentes</title>
+    <title>PrimeLife</title>
 
     <!-- Icono pagina web -->
     <meta name="theme-color" content="#000000">
-    <link rel="icon" type="image/png" href="../../assets/ico/logofab.png" sizes="96x96">
-    <link rel="icon" type="image/png" href="../../assets/ico/logofab.png" sizes="64x64 32x32 16x16">
-    <link rel="apple-touch-icon" href="../../assets/ico/logofab.png">
-    <link rel="apple-touch-icon" href="../../assets/ico/logofab.png">
+    <link rel="icon" type="image/png" href="../../assets/ico/logofarm.png" sizes="96x96">
+    <link rel="icon" type="image/png" href="../../assets/ico/logofarm.png" sizes="64x64 32x32 16x16">
+    <link rel="apple-touch-icon" href="../../assets/ico/logofarm.png">
+    <link rel="apple-touch-icon" href="../../assets/ico/logofarm.png">
     <meta property="og:title" content="Modulos Emergentes">
     <meta property="og:type" content="website">
     <meta property="og:description" content="Modulos Emergentes">
@@ -97,7 +97,7 @@
   <header>
     <div class="nav-bar" >
       <a href="index.html" class="brand">
-        <img class="logo_nombre" src="../../assets/images/logofab.png" alt="" style="max-width: 50px; height: 10;">
+        <img class="logo_nombre" src="../../assets/images/logofarm.png" alt="" style="max-width: 50px; height: 10;">
       </a>
       <div class="navigation">
         <div class="nav-items">
@@ -119,58 +119,53 @@
 
     <div id="tm-video-container">
       <video autoplay muted loop id="tm-video">
-        <source src="../../assets/videos/casa.mp4" type="video/mp4">
+        <source src="../../assets/videos/clinica.mp4" type="video/mp4">
       </video>
     </div>
     <!-- <video src="assets/videos/video1.mp4" autoplay muted loop></video> -->
 
     <div class="text-content1">
       <a href="index.html" class="brand">
-        <img class="logo_nombre" src="../../assets/images/logonombre.png" alt="" style="max-width: 150px; height: 50;">
+        <img class="logo_nombre" src="../../assets/images/logo_nombre.png" alt="" style="max-width: 150px; height: 50;">
       </a>
-      <!-- <h2 class="title">Castillo</h2> -->
-      <p>" El Mundo esta en Nuestras Manos "</p>
-      <!-- <a href="paquetes/lamas.html">
-        <button class="read-btn">Leer Más <i class="uil uil-arrow-right"></i></button>
-      </a> -->
+      <p>  Tu Salud, mi garantía </p>
+     
     </div>
 
   </section>
-  <!-- ***** MODAL INICIO ***** -->
-<!--
-  <input type="checkbox" id="cerrar">
-  <label for="cerrar" id="btn-cerrar">CERRAR</label>
-  <div class="modal">
-    <div class="contenido">
-      <h2>Visita nuestro blog</h2>
-      <img src="assets/images/atardecer-tarapoto.jpg" alt="">
-    </div>
-  </div>-->
+  
 
   <div class="row">
     <!-- :::::::::::::::::: Tecnologias a nuestro alcanse :::::::::::::: -->
     <section>
       <div class="head_title_viaje">
-        <h3>ADRA - PERU</h3>
+        <h3>PrimeLife</h3>
         <!-- <p>Mira las mejores ofertas de tours que tenemos para ti..</p> -->
       </div>
       <div class="fl_viaj col-lg-12">
         <div class="col-lg-6">
           <div class="text_viaj">
-            <h4 class="title_text">Quienes Somos</h4>
+            <h4 class="title_text">Misión</h4>
             <div class="parrafos">
-              <p class="parraf_2">ADRA es el brazo humanitario global de la Iglesia Adventista del Séptimo Día, parte de una comunidad adventista de 20 millones de personas, con cientos de miles de iglesias en todo el mundo y la mayor red integrada de atención sanitaria y educación del mundo.
-
-                                  ADRA proporciona ayuda de emergencia y desarrollo a personas vulnerables, independientemente de su origen étnico, afiliación política, género o asociación religiosa. Al asociarse con las comunidades locales, las organizaciones y los gobiernos, puede ofrecer programas culturalmente relevantes y desarrollar la capacidad local para un cambio sostenible.</p>
-              <a href="https://adra.org.pe/">Conocenos mas...</a>
+              <p class="parraf_2">En PrimeLife, nos dedicamos a ofrecer un servicio de salud integral. Combinamos la disponibilidad de atención médica de alta calidad con un asesoramiento profesional y personalizado para garantizar tu bienestar y el de tu familia.</p>
+              <!--<a href="https://adra.org.pe/">Conocenos mas...</a>-->
             </div>
 
           </div>
+          <div class="text_viaj">
+            <h4 class="title_text">Visión</h4>
+            <div class="parrafos">
+              <p class="parraf_2">Nuestro objetivo es ser reconocidos como la clínica líder en la región. Nos destacamos por nuestra dedicación a la calidad, la innovación y la atención al cliente, contribuyendo a una comunidad más saludable y mejor informada.</p>
+              <!--<a href="https://adra.org.pe/">Conocenos mas...</a>-->
+            </div>
+
+          </div>
+          
         </div>
-        <div class="col-lg-6">
+        <div class="col-lg-20">
           <div class="video_viaj">
             <video controls autoplay muted loop>
-              <source src="../../assets/videos/adra.mp4" type="video/mp4">
+              <source src="../../assets/videos/clinica_spot.mp4" type="video/mp4">
             </video>
           </div>
         </div>
@@ -184,8 +179,8 @@
       <section class="expe-exclusivo" id="popular">
         <div class="container-fluid">
           <div class="head">
-            <h3>Benneficios</h3>
-            <p>Objetivos a lograr</p>
+            <h3>Áreas</h3>
+            <p>Te presentamos nuestras principales áreas</p>
           </div>
           <div class="row">
             <div class="col-lg-12">
@@ -194,15 +189,16 @@
                   <div class="flip-card-front">
                     <div class="inner">
                       <img src="../../assets/images/experiencia.png" class="icon1" alt="">
-                      <h3>Mayor duracion de modulos</h3>
+                      <h3>Consultorios</h3>
                     </div>
                   </div>
 
                   <div class="flip-card-back">
                     <div class="inner">
                       <!-- <img src="assets/images/experiencia.png" class="icon2" alt=""> -->
-                      <h5>Modulos Duraderos</h5>
-                      <p>brede descripcion</p>
+                      <h5>Consultorios</h5>
+                      <p>Nuestros consultorios están diseñados para proporcionar un ambiente cómodo y seguro donde nuestros pacientes puedan recibir atención médica de calidad</p>
+                    <a href="https://upeuedupe-my.sharepoint.com/:x:/g/personal/borisgonzales_upeu_edu_pe/Eezr-oH4SNlMqpvyf4VQJhsBXzBan9DQkOmxyLIUju8AIw?rtime=YYTjfpuc3Eg">Conoce mas...</a>
                     </div>
                   </div>
                 </div>
@@ -211,15 +207,16 @@
                   <div class="flip-card-front">
                     <div class="inner">
                       <img src="../../assets/images/experiencia.png" class="icon1" alt="">
-                      <h3>Temperatura adecuada </h3>
+                      <h3>Servicio al Cliente </h3>
                     </div>
                   </div>
 
                   <div class="flip-card-back">
                     <div class="inner">
                       <!-- <img src="assets/images/experiencia.png" class="icon2" alt=""> -->
-                      <h5>Impplementacion de sensores</h5>
-                      <p> A traves de la implementacion de los sensores se garantiza la comodidad y las temperaturas adecuadas para las familias abastecidas</p>
+                      <h5>Servicio al Cliente</h5>
+                      <p> El área de Servicio al Cliente de PrimeLife es el corazón de nuestra clínica, ya que es el primer punto de contacto para nuestros pacientes. Nos dedicamos a proporcionar una experiencia positiva desde el momento en que nuestros pacientes entran en la clínica.</p>
+                   <a href="https://upeuedupe-my.sharepoint.com/:x:/g/personal/borisgonzales_upeu_edu_pe/Eezr-oH4SNlMqpvyf4VQJhsBXzBan9DQkOmxyLIUju8AIw?rtime=YYTjfpuc3Eg">Conoce mas...</a>
                     </div>
                   </div>
                 </div>
@@ -228,15 +225,53 @@
                   <div class="flip-card-front">
                     <div class="inner">
                       <img src="../../assets/images/experiencia.png" class="icon1" alt="">
-                      <h3>Facil Armado</h3>
+                      <h3>Recursos Humanos</h3>
                     </div>
                   </div>
 
                   <div class="flip-card-back">
                     <div class="inner">
                       <!-- <img src="assets/images/experiencia.png" class="icon2" alt=""> -->
-                      <h5>Armado Facil</h5>
-                      <p>Facil armado de los modulos ...</p>
+                      <h5>Recursos Humanos</h5>
+                      <p>El área de Recursos Humanos en PrimeLife es responsable de gestionar nuestro valioso equipo de profesionales de la salud y personal administrativo. Nos enfocamos en reclutar, retener y desarrollar a los mejores talentos para asegurar que nuestros pacientes reciban la mejor atención posible. </p>
+                    <a href="https://upeuedupe-my.sharepoint.com/:x:/g/personal/borisgonzales_upeu_edu_pe/Eezr-oH4SNlMqpvyf4VQJhsBXzBan9DQkOmxyLIUju8AIw?rtime=YYTjfpuc3Eg">Conoce mas...</a>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="flip-card">
+                  <div class="flip-card-front">
+                    <div class="inner">
+                      <img src="../../assets/images/experiencia.png" class="icon1" alt="">
+                      <h3>Finanzas</h3>
+                    </div>
+                  </div>
+
+                  <div class="flip-card-back">
+                    <div class="inner">
+                      <!-- <img src="assets/images/experiencia.png" class="icon2" alt=""> -->
+                      <h5>Finanzas</h5>
+                      <p>El departamento de Finanzas de PrimeLife se encarga de la gestión económica y financiera de la clínica. Esto incluye la planificación y administración de presupuestos.</p>
+                      <a href="https://upeuedupe-my.sharepoint.com/:x:/g/personal/borisgonzales_upeu_edu_pe/Eezr-oH4SNlMqpvyf4VQJhsBXzBan9DQkOmxyLIUju8AIw?rtime=YYTjfpuc3Eg">Conocenos mas...</a>
+
+                    </div>
+                  </div>
+                </div>
+
+                <div class="flip-card">
+                  <div class="flip-card-front">
+                    <div class="inner">
+                      <img src="../../assets/images/experiencia.png" class="icon1" alt="">
+                      <h3>Sistemas</h3>
+                    </div>
+                  </div>
+
+                  <div class="flip-card-back">
+                    <div class="inner">
+                      <!-- <img src="assets/images/experiencia.png" class="icon2" alt=""> -->
+                      <h5>Sistemas</h5>
+                      <p>Este departamento se encarga de gestionar la infraestructura tecnológica de la clínica, incluyendo los sistemas de información de salud, la seguridad de los datos, y el soporte técnico.</p>
+                    <a href="https://upeuedupe-my.sharepoint.com/:x:/g/personal/borisgonzales_upeu_edu_pe/Eezr-oH4SNlMqpvyf4VQJhsBXzBan9DQkOmxyLIUju8AIw?rtime=YYTjfpuc3Eg">Conocenos mas...</a>
                     </div>
                   </div>
                 </div>
@@ -330,18 +365,11 @@
       </a>
 
     </ul>
-    <p> <a class="text-white" href="https://jdl.pe/" target="_blank" rel="noopener noreferrer">UNAC</a> | 2023</p>
-    <!--<div class="container">
-      <div class="row">
-        <div class="col-lg-12">
-          <p>Copyright © 2036 <a href="#">WoOx Travel</a> Company. All rights reserved.
-          <br>Design: <a href="https://templatemo.com" target="_blank" title="free CSS templates">TemplateMo</a></p>
-        </div>
-      </div>
-    </div>-->
+    <p> <a class="text-white" href="" target="_blank" rel="noopener noreferrer">PrimeLife</a> | 2024</p>
+    
   </footer>
 
-  <a href="https://api.whatsapp.com/send?phone=930637287&text=Me%20interesa%20saber%20sobre%20los%20paquetes" target="_blank" rel="noopener noreferrer" class="float_whatssap">
+  <a href="https://api.whatsapp.com/send?phone=950859192&text=Me%20interesa%20saber%20sobre%20los%20paquetes" target="_blank" rel="noopener noreferrer" class="float_whatssap">
     <i class="fab fa-whatsapp"></i>
   </a>
 

@@ -880,6 +880,9 @@ VIJAE A MEDIDA
   justify-content: center;
   margin: 30px 40px 60px;
 }
+.text_viaj, .video_viaj {
+  flex: 1;
+}
 
 .video_viaj {
   position: relative;
@@ -1970,7 +1973,7 @@ VIJAE A MEDIDA
   height: 22em;
   min-height: 32em;
   background-color: #000000;
-  background-image: url(../images/casa.jpg);
+  background-image: url(../images/consultorio.jpg);
   background-size: cover;
   background-position: center;
   text-align: center;
@@ -1997,9 +2000,17 @@ VIJAE A MEDIDA
 
 .expe-exclusivo .flip-card:nth-of-type(3) .flip-card-front,
 .expe-exclusivo .flip-card:nth-of-type(3) .flip-card-back {
-  background-image: url(../images/duravilidad.png);
+  background-image: url(../images/rrhh.jpg);
+}
+.expe-exclusivo .flip-card:nth-of-type(4) .flip-card-front,
+.expe-exclusivo .flip-card:nth-of-type(4) .flip-card-back {
+  background-image: url(../images/finanzas.jpg);
 }
 
+.expe-exclusivo .flip-card:nth-of-type(5) .flip-card-front,
+.expe-exclusivo .flip-card:nth-of-type(5) .flip-card-back {
+  background-image: url(../images/sistemas.jpg);
+}
 .expe-exclusivo .flip-card-front {
   transform: rotateY(0deg);
 }
