@@ -155,7 +155,7 @@
           <div class="text_viaj">
             <h4 class="title_text">Visión</h4>
             <div class="parrafos">
-              <p class="parraf_2">Nuestro objetivo es ser reconocidos como la clínica líder en la región. Nos destacamos por nuestra dedicación a la calidad, la innovación y la atención al cliente, contribuyendo a una comunidad más saludable y mejor informada.</p>
+              <p class="parraf_2">Ser reconocidos como la clínica líder en la región. Nos destacamos por nuestra dedicación a la calidad, la innovación y la atención al cliente, contribuyendo a una comunidad más saludable y mejor informada.</p>
               <!--<a href="https://adra.org.pe/">Conocenos mas...</a>-->
             </div>
 
@@ -165,7 +165,7 @@
         <div class="col-lg-20">
           <div class="video_viaj">
             <video controls autoplay muted loop>
-              <source src="../../assets/videos/clinica_spot.mp4" type="video/mp4">
+              <source src="../../assets/videos/clinica_spo.mp4" type="video/mp4">
             </video>
           </div>
         </div>
