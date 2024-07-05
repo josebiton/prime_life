@@ -33,8 +33,7 @@ RUN sed -ri -e 's!expose_php = On!expose_php = Off!g' $PHP_INI_DIR/php.ini-produ
 RUN a2enmod rewrite
 
 
-#composer install
-COPY --from=composer:2.1.9 /usr/bin/composer /usr/bin/composer
+
 
 
 #setup task, for running Taskfiles
@@ -52,5 +51,4 @@ RUN echo "${TZ}" > /etc/timezone
 COPY . /var/www/html/
 RUN chmod -R a+r /var/www/html
 
-RUN chmod -R 755 writable/ 
-RUN chown -R www-data:www-data writable/
+
