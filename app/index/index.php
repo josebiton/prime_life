@@ -282,38 +282,6 @@
       </section>
     </div>
 
-    <!-- :::::::::::::::::: T E S T I M O N I O :::::::::::::: -->
-    <div class="col-lg-12">
-      <div class="head_testimonios">
-        <h3>TESTIMONIOS.</h3>
-        <p>Mira lo que la gente esta comentando..</p>
-        <p class="text-danger font-size-12px" >(deslise con su maus <i class="fas fa-mouse-pointer"></i> para ver más)</p>
-      </div>
-      <!--<section class="">
-        <h5>TESTIMONIOS</h5>
-        <div class="">
-          <div class="testi-content swiper-wrapper ">
-            <div class="text-center" ><div class="spinner"></div> <div class="font-size-15px" >Cargando datos...</div></div>
-          </div>
-
-          <div class="swiper-button-next nav-btn1"></div>
-          <div class="swiper-button-prev nav-btn1"></div>
-          <div class="swiper-pagination"></div>
-        </div>
-      </section>-->
-    </div>
-
-    <!-- :::::::::::::::::: P A L A B R A S   D E   C E O :::::::::::::: -->
-    <!-- <div class="col-lg-12">
-      <section class="author-section section-padding" >
-        <div class="container">
-          <div class="row ceo_html">
-            <div class="text-center" ><div class="spinner"></div> <div class="font-size-15px" >Cargando datos...</div></div>
-          </div>
-        </div>
-      </section>
-    </div> -->
-  </div>
 
 
   <!-- ***** Main Banner Area End ***** -->
