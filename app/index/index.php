@@ -107,6 +107,7 @@
           <a href="https://upeuedupe-my.sharepoint.com/:b:/g/personal/borisgonzales_upeu_edu_pe/EcIN5GGtMT9FtYH3AzdOStUB-96LgVTAaB0LaMJMriLprw?e=4cZj04"><i class="uil uil-compass"></i> Subneteo</a>
           <a href="https://upeuedupe-my.sharepoint.com/:x:/g/personal/borisgonzales_upeu_edu_pe/Eezr-oH4SNlMqpvyf4VQJhsBXzBan9DQkOmxyLIUju8AIw?rtime=YYTjfpuc3Eg"><i class="uil uil-info-circle"></i> Inventario</a>
           <a href="https://upeuedupe-my.sharepoint.com/:x:/g/personal/marco_rios_upeu_edu_pe/EWOeuQQfxVpLtp4BftbLOAoBObKmAxJamK-31DK8UgMP7w?e=EpJDnl"><i class="uil uil-info-circle"></i> Usuarios</a>
+          <a href="https://upeuedupe-my.sharepoint.com/:w:/g/personal/junior_rojas_upeu_edu_pe/EaT3hMlqRqRGvjYeiXQxtVEBCfbiWenaVHHtlRQUnu6_0g?e=sM1Pqf"><i class="uil uil-info-circle"></i> Manual</a>
 
         </div>
       </div>
