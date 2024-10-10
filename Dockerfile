@@ -1,4 +1,3 @@
-
 FROM php:8.1.0-apache
 
 # Actualiza el sistema y instala las dependencias necesarias
@@ -7,6 +6,7 @@ RUN apt-get update && apt-get install --no-install-recommends -y \
     libxml2-dev \
     libcurl4-openssl-dev \
     mariadb-client \
+    libmariadb-dev \  # Añadido para pdo_mysql
     zip \
     unzip \
     zlib1g-dev \
@@ -43,4 +43,3 @@ RUN ln -snf /usr/share/zoneinfo/${TZ} /etc/localtime \
 # Copia los archivos de la aplicación
 COPY . /var/www/html/
 RUN chmod -R a+r /var/www/html
-
