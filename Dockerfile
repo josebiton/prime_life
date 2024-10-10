@@ -1,18 +1,6 @@
 FROM php:8.1.0-apache
 # Actualiza el sistema y instala las dependencias necesarias
-RUN apt-get update && apt-get install --no-install-recommends -y \
-    libzip-dev \
-    libxml2-dev \
-    libcurl4-openssl-dev \
-    mariadb-client \
-    libmariadb-dev \  # Añadido para pdo_mysql
-    zip \
-    unzip \
-    zlib1g-dev \
-    libicu-dev \
-    g++ \
-    tzdata \
-    && apt-get clean && rm -rf /var/lib/apt/lists/*
+
 
 # Configura y habilita la extensión intl
 RUN docker-php-ext-configure intl && docker-php-ext-install intl
