@@ -1,5 +1,4 @@
 FROM php:8.1.0-apache
-
 # Actualiza el sistema y instala las dependencias necesarias
 RUN apt-get update && apt-get install --no-install-recommends -y \
     libzip-dev \
