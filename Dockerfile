@@ -1,7 +1,7 @@
-# Imagen base
+# Base image
 FROM php:8.1-apache
 
-# Instalar dependencias del sistema
+# Instalar dependencias necesarias
 RUN apt-get update && apt-get install -y \
     git \
     unzip \
@@ -12,30 +12,35 @@ RUN apt-get update && apt-get install -y \
     libonig-dev \
     libzip-dev \
     build-essential \
-    libc-client2007e-dev \
+    wget \
+    pkg-config \
     && rm -rf /var/lib/apt/lists/*
 
-# Configurar y compilar extensión IMAP
-RUN docker-php-ext-configure imap --with-kerberos --with-imap-ssl \
-    && docker-php-ext-install imap \
-    && docker-php-ext-install intl \
-    && docker-php-ext-install zip \
-    && docker-php-ext-install mysqli \
-    && docker-php-ext-install pdo_mysql \
-    && docker-php-ext-install opcache
+# Instalar IMAP desde PECL (compatible con PHP 8.1)
+RUN wget https://www2.informatik.hu-berlin.de/~stefan/imap/imap-2007e.tar.gz \
+    && tar -xzf imap-2007e.tar.gz \
+    && cd imap-2007e \
+    && phpize \
+    && ./configure --with-kerberos --with-imap-ssl \
+    && make && make install \
+    && echo "extension=imap.so" > /usr/local/etc/php/conf.d/imap.ini \
+    && cd .. && rm -rf imap-2007e imap-2007e.tar.gz
 
-# Habilitar módulos de Apache
+# Instalar extensiones PHP comunes
+RUN docker-php-ext-install intl zip mysqli pdo_mysql opcache
+
+# Habilitar módulos Apache necesarios
 RUN a2enmod rewrite headers
 
 # Copiar código de la aplicación
 COPY . /var/www/html/
 
-# Permisos correctos
+# Permisos
 RUN chown -R www-data:www-data /var/www/html \
     && chmod -R 755 /var/www/html
 
 # Exponer puerto 80
 EXPOSE 80
 
-# Comando por defecto
+# Ejecutar Apache
 CMD ["apache2-foreground"]
