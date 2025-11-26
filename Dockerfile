@@ -3,52 +3,53 @@ FROM php:8.1-apache
 # ----------------------------------------------------------------------
 # 1. INSTALACIÓN DE DEPENDENCIAS DEL SISTEMA
 # ----------------------------------------------------------------------
-# Incluye paquetes de desarrollo requeridos para compilar PHP extensions (ej. intl, zip, IMAP)
+# Instalamos TODO, incluyendo los headers para IMAP, SSL, y todas las otras extensiones.
 RUN apt-get update && apt-get install -y \
+    libzip-dev \
+    libicu-dev \
+    libxml2-dev \
+    libonig-dev \
+    libcurl4-openssl-dev \
+    libkrb5-dev \
+    libssl-dev \
+    # Paquetes esenciales para la compilación de IMAP (UW IMAP client development headers)
+    uw-mail-utils \
+    build-essential \
     git \
     unzip \
-    # 🚨 CORRECCIÓN CLAVE: libc-client-dev es obsoleto. Usamos libimap-dev.
-    libimap-dev \
-    libkrb5-dev \
-    libxml2-dev \
-    libcurl4-openssl-dev \
-    libicu-dev \
-    libonig-dev \
-    libzip-dev \
-    build-essential \
+    # Limpieza
     && rm -rf /var/lib/apt/lists/*
 
 # ----------------------------------------------------------------------
 # 2. INSTALACIÓN Y CONFIGURACIÓN DE EXTENSIONES PHP
 # ----------------------------------------------------------------------
-
-# Extensiones estándar (intl, zip, etc.)
-RUN docker-php-ext-configure intl \
-    && docker-php-ext-install intl zip mysqli pdo pdo_mysql curl xml
-
-# Compilar IMAP (Usando el método estándar de docker-php-ext-install)
-# Si libimap-dev está instalado correctamente, esto debería funcionar.
+# El comando docker-php-ext-install ahora debería encontrar los headers en /usr/include
 RUN docker-php-ext-configure imap --with-kerberos --with-imap-ssl \
-    && docker-php-ext-install imap
+    # Instalamos todas las extensiones requeridas
+    && docker-php-ext-install \
+        intl \
+        zip \
+        mysqli \
+        pdo \
+        pdo_mysql \
+        curl \
+        xml \
+        imap
 
 # ----------------------------------------------------------------------
-# 3. CONFIGURACIÓN DE APACHE
+# 3. CONFIGURACIÓN DE APACHE, COMPOSER Y CÓDIGO
 # ----------------------------------------------------------------------
-# Habilitar mod_rewrite
-RUN a2enmod rewrite
-# Permitir que el archivo .htaccess anule la configuración (requerido para frameworks MVC)
-RUN sed -i 's/AllowOverride None/AllowOverride All/g' /etc/apache2/apache2.conf
+# Habilitar mod_rewrite y permisos de .htaccess
+RUN a2enmod rewrite && \
+    sed -i 's/AllowOverride None/AllowOverride All/g' /etc/apache2/apache2.conf
 
-# ----------------------------------------------------------------------
-# 4. INSTALAR COMPOSER Y CÓDIGO
-# ----------------------------------------------------------------------
 # Instalar Composer
 COPY --from=composer:2 /usr/bin/composer /usr/bin/composer
 
 # Directorio de trabajo y copia de archivos
 WORKDIR /var/www/html/
 
-# Instalar dependencias de Composer antes de copiar el resto del código
+# Instalar dependencias de Composer (mejor hacerlo aquí para usar el caché de Docker)
 COPY composer.* ./
 RUN /usr/bin/composer install --no-dev --optimize-autoloader
 
