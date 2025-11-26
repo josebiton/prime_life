@@ -19,7 +19,7 @@ RUN apt-get update && apt-get install -y \
     libcurl4-openssl-dev \
     libkrb5-dev \
     libssl-dev \
-    # 🚨 SOLUCIÓN DEFINITIVA IMAP: Usamos el paquete clásico de Bullseye
+    # SOLUCIÓN IMAP: Paquete clásico de Bullseye (libc-client2007e-dev)
     libc-client2007e-dev \
     build-essential \
     git \
@@ -32,7 +32,6 @@ RUN apt-get update && apt-get install -y \
 # 2. INSTALACIÓN Y CONFIGURACIÓN DE EXTENSIONES PHP
 # ----------------------------------------------------------------------
 # 1. Configurar y compilar IMAP con soporte SSL/Kerberos
-# Nota: La ruta para el cliente c (IMAP) es necesaria con este paquete clásico.
 RUN docker-php-ext-configure imap --with-kerberos --with-imap-ssl --with-imap=/usr/include/imap \
     # 2. Instalar todas las extensiones requeridas en una sola línea
     && docker-php-ext-install \
@@ -56,12 +55,12 @@ RUN a2enmod rewrite && \
 # Instalar Composer (copiamos el binario desde la imagen oficial de Composer)
 COPY --from=composer:2 /usr/bin/composer /usr/bin/composer
 
-# Copiamos solo los archivos de Composer para poder instalar las dependencias con caché
-COPY composer.* ./
-RUN composer install --no-dev --optimize-autoloader
-
-# Copiamos el resto del código del proyecto al directorio de trabajo
+# 🚀 PASO CORREGIDO: Copiamos TODO el proyecto (incluyendo composer.json) justo
+# antes de instalar dependencias para que Composer lo encuentre.
 COPY . /var/www/html/
+
+# Instalamos dependencias de Composer.
+RUN composer install --no-dev --optimize-autoloader
 
 # Ajustamos permisos finales para Apache (www-data)
 RUN chown -R www-data:www-data /var/www/html \
