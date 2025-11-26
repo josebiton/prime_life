@@ -1,0 +1,17 @@
+{
+    "name": "jose/prime_life",
+    "description": "Project for Prime Life PHP Application",
+    "type": "project",
+    "require": {
+        "php": "^8.2",
+        "ext-mysqli": "*",
+        "ext-pdo_mysql": "*",
+        "ext-imap": "*",
+        "ext-intl": "*",
+        "ext-zip": "*",
+        "ext-curl": "*",
+        "ext-xml": "*",
+        "ext-mbstring": "*"
+    },
+    "license": "MIT"
+}
