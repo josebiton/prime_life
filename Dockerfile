@@ -10,7 +10,7 @@ RUN apt-get install -y \
     gettext \
     libicu-dev \
     openssl \
-    uw-imap-dev \
+    libc-client2007e-dev \
     libkrb5-dev \
     libxml2-dev \
     libfreetype6-dev \
@@ -22,20 +22,21 @@ RUN apt-get install -y \
     libxslt1-dev \
     pkg-config \
     libzip-dev \
-    unzip
+    unzip \
+    ca-certificates
 
-# Instalar tzdata
-RUN apt-get install -y tzdata
-
-# Extensiones PHP necesarias
+# Extensiones PHP comunes
 RUN docker-php-ext-install intl bcmath bz2 tidy xsl zip
 
-# Extensión GD correctamente configurada
+# Configurar y compilar GD
 RUN docker-php-ext-configure gd \
     --with-freetype \
-    --with-jpeg
+    --with-jpeg \
+    && docker-php-ext-install gd
 
-RUN docker-php-ext-install gd
+# Instalar IMAP correctamente en Debian moderno
+RUN docker-php-ext-configure imap --with-kerberos --with-imap-ssl \
+    && docker-php-ext-install imap
 
 # Habilitar módulos de Apache
 RUN a2enmod rewrite
