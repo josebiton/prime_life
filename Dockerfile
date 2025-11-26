@@ -1,11 +1,10 @@
-# Imagen base de PHP 8.1 con Apache
+# Imagen base
 FROM php:8.1-apache
 
-# Instalar dependencias del sistema y extensiones de PHP
+# Instalar dependencias del sistema
 RUN apt-get update && apt-get install -y \
     git \
     unzip \
-    libc-client-dev \
     libkrb5-dev \
     libxml2-dev \
     libcurl4-openssl-dev \
@@ -13,9 +12,10 @@ RUN apt-get update && apt-get install -y \
     libonig-dev \
     libzip-dev \
     build-essential \
+    libc-client2007e-dev \
     && rm -rf /var/lib/apt/lists/*
 
-# Configurar y compilar extensiones de PHP necesarias
+# Configurar y compilar extensión IMAP
 RUN docker-php-ext-configure imap --with-kerberos --with-imap-ssl \
     && docker-php-ext-install imap \
     && docker-php-ext-install intl \
@@ -24,18 +24,18 @@ RUN docker-php-ext-configure imap --with-kerberos --with-imap-ssl \
     && docker-php-ext-install pdo_mysql \
     && docker-php-ext-install opcache
 
-# Habilitar módulos de Apache si es necesario
+# Habilitar módulos de Apache
 RUN a2enmod rewrite headers
 
-# Copiar el código de la aplicación al contenedor
+# Copiar código de la aplicación
 COPY . /var/www/html/
 
-# Establecer permisos correctos (opcional, según tu proyecto)
+# Permisos correctos
 RUN chown -R www-data:www-data /var/www/html \
     && chmod -R 755 /var/www/html
 
-# Exponer el puerto 80 para Apache
+# Exponer puerto 80
 EXPOSE 80
 
-# Comando por defecto para iniciar Apache en primer plano
+# Comando por defecto
 CMD ["apache2-foreground"]
