@@ -1,9 +1,9 @@
-# Dockerfile definitivo (Base PHP 8.2 con Apache)
+# Dockerfile definitivo (Base PHP 8.2 con Apache, en Debian Bullseye)
 
-# Usamos la imagen base de PHP 8.2 con Apache
-FROM php:8.2-apache
+# Usamos la imagen base de PHP 8.2 en Debian Bullseye (Estable)
+FROM php:8.2-apache-bullseye
 
-# Establecemos el directorio de trabajo (donde se ejecutarán los comandos y donde irá el código)
+# Establecemos el directorio de trabajo
 WORKDIR /var/www/html
 
 # ----------------------------------------------------------------------
@@ -11,7 +11,7 @@ WORKDIR /var/www/html
 # ----------------------------------------------------------------------
 # Instalamos los paquetes de desarrollo necesarios para compilar las extensiones de PHP.
 RUN apt-get update && apt-get install -y \
-    # Dependencias para PHP, incluyendo IMAP (uw-mail-utils) y compilación
+    # Dependencias estándar
     libzip-dev \
     libicu-dev \
     libxml2-dev \
@@ -19,7 +19,8 @@ RUN apt-get update && apt-get install -y \
     libcurl4-openssl-dev \
     libkrb5-dev \
     libssl-dev \
-    uw-mail-utils \
+    # 🚨 SOLUCIÓN DEFINITIVA IMAP: Usamos el paquete clásico de Bullseye
+    libc-client2007e-dev \
     build-essential \
     git \
     unzip \
@@ -31,10 +32,10 @@ RUN apt-get update && apt-get install -y \
 # 2. INSTALACIÓN Y CONFIGURACIÓN DE EXTENSIONES PHP
 # ----------------------------------------------------------------------
 # 1. Configurar y compilar IMAP con soporte SSL/Kerberos
-RUN docker-php-ext-configure imap --with-kerberos --with-imap-ssl
-
-# 2. Instalar todas las extensiones requeridas en una sola línea
-RUN docker-php-ext-install \
+# Nota: La ruta para el cliente c (IMAP) es necesaria con este paquete clásico.
+RUN docker-php-ext-configure imap --with-kerberos --with-imap-ssl --with-imap=/usr/include/imap \
+    # 2. Instalar todas las extensiones requeridas en una sola línea
+    && docker-php-ext-install \
     intl \
     zip \
     mysqli \
