@@ -1,61 +1,41 @@
+# Imagen base de PHP 8.1 con Apache
 FROM php:8.1-apache
 
-# ----------------------------------------------------------------------
-# 1. INSTALACIÓN DE DEPENDENCIAS DEL SISTEMA
-# ----------------------------------------------------------------------
-# Instalamos TODO, incluyendo los headers para IMAP, SSL, y todas las otras extensiones.
+# Instalar dependencias del sistema y extensiones de PHP
 RUN apt-get update && apt-get install -y \
-    libzip-dev \
-    libicu-dev \
-    libxml2-dev \
-    libonig-dev \
-    libcurl4-openssl-dev \
-    libkrb5-dev \
-    libssl-dev \
-    # Paquetes esenciales para la compilación de IMAP (UW IMAP client development headers)
-    uw-mail-utils \
-    build-essential \
     git \
     unzip \
-    # Limpieza
+    libc-client-dev \
+    libkrb5-dev \
+    libxml2-dev \
+    libcurl4-openssl-dev \
+    libicu-dev \
+    libonig-dev \
+    libzip-dev \
+    build-essential \
     && rm -rf /var/lib/apt/lists/*
 
-# ----------------------------------------------------------------------
-# 2. INSTALACIÓN Y CONFIGURACIÓN DE EXTENSIONES PHP
-# ----------------------------------------------------------------------
-# El comando docker-php-ext-install ahora debería encontrar los headers en /usr/include
+# Configurar y compilar extensiones de PHP necesarias
 RUN docker-php-ext-configure imap --with-kerberos --with-imap-ssl \
-    # Instalamos todas las extensiones requeridas
-    && docker-php-ext-install \
-        intl \
-        zip \
-        mysqli \
-        pdo \
-        pdo_mysql \
-        curl \
-        xml \
-        imap
+    && docker-php-ext-install imap \
+    && docker-php-ext-install intl \
+    && docker-php-ext-install zip \
+    && docker-php-ext-install mysqli \
+    && docker-php-ext-install pdo_mysql \
+    && docker-php-ext-install opcache
 
-# ----------------------------------------------------------------------
-# 3. CONFIGURACIÓN DE APACHE, COMPOSER Y CÓDIGO
-# ----------------------------------------------------------------------
-# Habilitar mod_rewrite y permisos de .htaccess
-RUN a2enmod rewrite && \
-    sed -i 's/AllowOverride None/AllowOverride All/g' /etc/apache2/apache2.conf
+# Habilitar módulos de Apache si es necesario
+RUN a2enmod rewrite headers
 
-# Instalar Composer
-COPY --from=composer:2 /usr/bin/composer /usr/bin/composer
-
-# Directorio de trabajo y copia de archivos
-WORKDIR /var/www/html/
-
-# Instalar dependencias de Composer (mejor hacerlo aquí para usar el caché de Docker)
-COPY composer.* ./
-RUN /usr/bin/composer install --no-dev --optimize-autoloader
-
-# Copiar todo el código al directorio de trabajo
+# Copiar el código de la aplicación al contenedor
 COPY . /var/www/html/
-RUN chown -R www-data:www-data /var/www/html
 
+# Establecer permisos correctos (opcional, según tu proyecto)
+RUN chown -R www-data:www-data /var/www/html \
+    && chmod -R 755 /var/www/html
+
+# Exponer el puerto 80 para Apache
 EXPOSE 80
+
+# Comando por defecto para iniciar Apache en primer plano
 CMD ["apache2-foreground"]
