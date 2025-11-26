@@ -55,11 +55,16 @@ RUN a2enmod rewrite && \
 # Instalar Composer (copiamos el binario desde la imagen oficial de Composer)
 COPY --from=composer:2 /usr/bin/composer /usr/bin/composer
 
-# 🚀 PASO CORREGIDO: Copiamos TODO el proyecto (incluyendo composer.json) justo
-# antes de instalar dependencias para que Composer lo encuentre.
+# 🐛 DEBUG: Copiamos composer.json explícitamente para asegurar su presencia
+# antes de copiar el resto del proyecto.
+COPY composer.json .
+COPY composer.lock .
+
+# 🚀 Copiamos el resto del proyecto.
 COPY . /var/www/html/
 
 # Instalamos dependencias de Composer.
+# Ahora composer.json debe estar disponible.
 RUN composer install --no-dev --optimize-autoloader
 
 # Ajustamos permisos finales para Apache (www-data)
